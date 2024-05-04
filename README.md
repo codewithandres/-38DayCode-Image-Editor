@@ -34,21 +34,14 @@ Las contribuciones son lo que hacen que la comunidad de código abierto sea un l
 4. Haz Push a la rama (`git push origin feature/AmazingFeature`).
 5. Abre una Pull Request.
 
-![Logo de mi proyecto](https://raw.githubusercontent.com/usuario/repositorio/rama/ruta/al/asset)
+![Logo de mi proyecto](https://github.com/DizeWEb/-38DayCode-Image-Editor/blob/main/img/bandicam%202024-05-04%2017-01-28-146.jpg)
  
  
-## Licencia
 
-Distribuido bajo la Licencia MIT. Consulta `LICENSE` para más información.
 
 ## Contacto
 
-Tu Nombre - @tu_twitter - email@example.com
+Tu Nombre - @andresRey 
 
-Link del Proyecto: https://github.com/tu_usuario/tu_repositorio
+Link del Proyecto:i https://github.com/DizeWEb
 
-## Agradecimientos
-
-- Choose an Open Source License
-- Font Awesome
-- GitHub Pages
