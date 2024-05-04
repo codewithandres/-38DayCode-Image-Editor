@@ -41,7 +41,7 @@ Las contribuciones son lo que hacen que la comunidad de código abierto sea un l
 
 ## Contacto
 
-Tu Nombre - @andresRey 
+INSTAGRAM - @andresRey 
 
 Link del Proyecto:i https://github.com/DizeWEb
 
