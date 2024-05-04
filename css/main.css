@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    background-color: hsl(235, 41%, 5%);
+    color: hsl(208, 100%, 97%);
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px 35px 35px;
+    border-radius: .7rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.container h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.wrapper {
+    display: flex;
+    margin: 20px 0;
+    min-height: 340px;
+}
+
+.wrapper .editpr-paner {
+    padding: 15px 20px;
+    box-shadow: rgba(255, 255, 255, 0.02) 0px 1px 3px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px;
+    width: 280px;
+    border-radius: 5px;
+}
+
+.editpr-paner .title {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.editpr-paner .options,
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.editpr-paner button {
+    height: 40px;
+    font-size: 14px;
+    color: lavender;
+    margin-bottom: 10px;
+    border: 0;
+    box-shadow: rgba(255, 255, 255, 0.02) 0px 1px 3px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px;
+    border-radius: .3rem;
+    background-color: transparent;
+}
+
+.editpr-paner .filter button {
+    width: calc(100% / 2 - 4px);
+    cursor: pointer;
+    transition: background-color 250ms ease;
+
+    &:hover {
+        background-color: hwb(210 5% 90% / 0.774);
+    }
+}
+
+.filter button.active {
+    background-color: hsl(216, 100%, 33%);
+}
+
+
+.editpr-paner .rotate button {
+    width: calc(100% / 4 - 3px);
+    cursor: pointer;
+
+    &:hover {
+        background-color: hwb(210 5% 90% / 0.774);
+    }
+}
+
+.filter .slider {
+    margin-top: 12px;
+}
+
+.filter .slider .filter-info {
+    display: flex;
+    justify-content: space-between;
+    color: #999999;
+    font-size: 14px;
+}
+
+.filter .slider input {
+    width: 100%;
+    height: 5px;
+    accent-color: hsl(216, 100%, 33%);
+}
+
+.editpr-paner .rotate {
+    margin-top: 17px;
+}
+
+.rotate button {
+    font-size: 18px;
+}
+
+/* estilos previw image */
+
+.wrapper .previw-image {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.previw-image img {
+    border-radius: 5px;
+    display: block;
+    object-fit: contain;
+
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: auto;
+}
+
+.controls button {
+    font-size: 14px;
+    padding: 6px 20px;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: hsla(0, 0%, 100%, 0.02) 0px 1px 3px 0px, hsla(0, 0%, 100%, 0.15) 0px 0px 0px 1px;
+    background-color: transparent;
+    color: hsl(240, 67%, 94%);
+    cursor: pointer;
+    transition: 300ms ease;
+}
+
+.controls .choose-img {
+    background-color: hsl(222, 67%, 11%);
+    box-shadow: hsl(224, 65%, 5%) 0px 1px 3px 0px, hsl(224, 65%, 5%) 0px 0px 0px 1px;
+    transition: box-shadow 300ms ease, outline 350ms ease-out;
+
+    &:hover {
+        outline: 1px solid hsla(240, 68%, 94%, 0.486);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+}
+
+.controls .Seve-image:hover {
+    background-color: hsl(216, 100%, 33%);
+}
+
+@media screen and (max-width: 730px) {
+    .container {
+        padding: 25px;
+    }
+
+    .container .wrapper {
+        flex-wrap: wrap-reverse;
+    }
+
+    .wrapper .editpr-paner {
+        width: 100%;
+    }
+
+    .wrapper .previw-image {
+        width: 100%;
+        margin: 0 0 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .controls button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .controls .row {
+        width: 100%;
+    }
+
+    .controls .row .Seve-image {
+        margin-left: 0;
+    }
+}
