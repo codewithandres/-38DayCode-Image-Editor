@@ -14,17 +14,17 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container disable">
         <h1>Easy Image Editor</h1>
         <div class="wrapper">
             <div class="editpr-paner">
                 <div class="filter">
                     <label class="title">Filters</label>
                     <div class="options">
-                        <button class="active">Brightness</button>
-                        <button>Saturation</button>
-                        <button>Onversion</button>
-                        <button>GrayScale</button>
+                        <button class="active" id="brightness">Brightness</button>
+                        <button id="Saturation">Saturation</button>
+                        <button id="Inversion">Inversion</button>
+                        <button id="GrayScale">GrayScale</button>
                     </div>
                     <div class="slider">
                         <div class="filter-info">
@@ -37,10 +37,11 @@
                 <div class="rotate">
                     <label class="title">Rotate & Filter</label>
                     <div class="options">
-                        <button><i class="ri-anticlockwise-line"></i></button>
-                        <button><i class="ri-clockwise-line"></i></button>
-                        <button><i class="ri-flip-vertical-line"></i></button>
-                        <button><i class="ri-flip-horizontal-line"></i></button>
+                        <button data-address="left"><i class="ri-anticlockwise-line"></i></button>
+                        <button data-address="right"><i class="ri-clockwise-line"></i></button>
+                        <button data-address="horizontal">
+                            <i class="ri-flip-horizontal-line"></i></button>
+                        <button data-address="vertical"><i class="ri-flip-vertical-line"></i></button>
                     </div>
                 </div>
             </div>
@@ -51,7 +52,7 @@
         <div class="controls">
             <button class="rest-filters">Rest Filters</button>
             <div class="row">
-                <input type="file" class="file-input" accept="image/*">
+                <input type="file" class="file-input" accept="image/*" hidden>
                 <button class="choose-img">Choose Image</button>
                 <button class="Seve-image">Save Image</button>
             </div>
