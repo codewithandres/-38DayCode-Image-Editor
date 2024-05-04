@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor | Dize Design</title>
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- custom js -->
+    <script type="module" src="js/app.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Easy Image Editor</h1>
+        <div class="wrapper">
+            <div class="editpr-paner">
+                <div class="filter">
+                    <label class="title">Filter</label>
+                    <div class="option">
+                        <button>Brightness</button>
+                        <button>Saturation</button>
+                        <button>Onversion</button>
+                        <button>GrayScale</button>
+                    </div>
+                    <div class="slider">
+                        <div class="filter-info">
+                            <p class="name">Brightness</p>
+                            <p class="value">100%</p>
+                        </div>
+                        <input type="range" min="0" value="100" max="200">
+                    </div>
+                </div>
+                <div class="rotate">
+                    <label class="title">Rotate & Filter</label>
+                    <div class="options">
+                        <button><i class="ri-anticlockwise-line"></i></button>
+                        <button><i class="ri-clockwise-line"></i></button>
+                        <button><i class="ri-flip-vertical-line"></i></button>
+                        <button><i class="ri-flip-horizontal-line"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="previw-image">
+                <img src="img/_39dd8c2b-1af2-48ae-a0fb-f73b9e1b2e37.jpg" alt="">
+            </div>
+        </div>
+        <div class="controls">
+            <button class="rest-filters">Rest Filters</button>
+            <div class="row">
+                <button class="choose-img">Choose Image</button>
+                <button class="Seve-image">Save Image</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
