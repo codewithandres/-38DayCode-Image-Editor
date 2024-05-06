@@ -54,7 +54,6 @@ const loadImagen = () => {
     previeImg.addEventListener('load', () => {
         document.querySelector('.container').classList.remove('disable');
     });
-    console.log(file);
 };
 
 
@@ -88,7 +87,6 @@ const loadImagen = () => {
 
             filterSlider.max = 100;
             filterSlider.value = GrayScale;
-            console.log({ GrayScale });
             filterValue.textContent = `${GrayScale} %`;
 
         }
