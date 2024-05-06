@@ -43,5 +43,5 @@ Las contribuciones son lo que hacen que la comunidad de código abierto sea un l
 
 INSTAGRAM - @andresRey 
 
-Link del Proyecto:i https://github.com/DizeWEb
-
+Link del Proyecto:[i https://github.com/DizeWEb
+](https://comfy-moxie-da49d6.netlify.app/)
