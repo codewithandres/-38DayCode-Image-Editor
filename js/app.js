@@ -86,6 +86,12 @@ const loadImagen = () => {
 
 const updateFilter = () => {
     filterValue.textContent = `${filterSlider.value} %`;
+    const filterSettings = {
+        BRIGHTNESS: 'Brightness',
+        SATURATION: 'Saturation',
+        INVERSION: 'Inversion',
+        GRAYSCALE: 'GrayScale'
+    };
 
     const selectedFilter = document.querySelector('.filter .active').id;
     const filterPropertY = filtros[selectedFilter];
