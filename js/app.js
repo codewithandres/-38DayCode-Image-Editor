@@ -65,32 +65,6 @@ const loadImagen = () => {
         option.classList.add('active');
         filterName.textContent = option.textContent;
 
-        // if (option.id === filtros.BRIGHTNESS) {
-
-        //     filterSlider.max = 200;
-        //     filterSlider.value = Brightness;
-        //     filterValue.textContent = `${Brightness} %`;
-
-        // } else if (option.id === filtros.SATURATION) {
-
-        //     filterSlider.max = 200;
-        //     filterSlider.value = Saturation;
-        //     filterValue.textContent = `${Saturation} %`;
-
-        // } else if (option.id === filtros.INVERSION) {
-
-        //     filterSlider.max = 100;
-        //     filterSlider.value = Inversion;
-        //     filterValue.textContent = `${Inversion} %`;
-
-        // } else {
-
-        //     filterSlider.max = 100;
-        //     filterSlider.value = GrayScale;
-        //     filterValue.textContent = `${GrayScale} %`;
-
-        // }
-
         const filterOptions = {
             BRIGHTNESS: { max: 200, value: Brightness },
             SATURATION: { max: 200, value: Saturation },
@@ -114,21 +88,24 @@ const updateFilter = () => {
     filterValue.textContent = `${filterSlider.value} %`;
 
     const selectedFilter = document.querySelector('.filter .active').id;
+    const filterPropertY = filtros[selectedFilter];
 
-    if (selectedFilter == filtros.BRIGHTNESS) {
+    // if (selectedFilter == filtros.BRIGHTNESS) {
 
-        Brightness = filterSlider.value;
-    } else if (selectedFilter == filtros.SATURATION) {
+    //     Brightness = filterSlider.value;
+    // } else if (selectedFilter == filtros.SATURATION) {
 
-        Saturation = filterSlider.value;
-    } else if (selectedFilter == filtros.INVERSION) {
+    //     Saturation = filterSlider.value;
+    // } else if (selectedFilter == filtros.INVERSION) {
 
-        Inversion = filterSlider.value;
-    } else {
+    //     Inversion = filterSlider.value;
+    // } else {
 
-        GrayScale = filterSlider.value
-    };
-
+    //     GrayScale = filterSlider.value
+    // };
+    if (filterPropertY) {
+        window[filterPropertY] = filterSlider.value;
+    }
     appyFilter();
 };
 
