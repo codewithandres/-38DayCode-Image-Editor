@@ -10,10 +10,10 @@ const fileInput = document.querySelector('.file-input'),
     choosoBtn = document.querySelector('.choose-img'),
     saveImageBtn = document.querySelector('.Seve-image');
 
-let Brightness = 100,
-    Saturation = 100,
-    Inversion = 0,
-    GrayScale = 0;
+let brightness = 100,
+    saturation = 100,
+    inversion = 0,
+    grayscale = 0;
 
 let rotate = 0,
     flipHorizontal = 1,
@@ -21,9 +21,9 @@ let rotate = 0,
 
 const filtros = {
     BRIGHTNESS: 'brightness',
-    SATURATION: 'Saturation',
-    INVERSION: 'Inversion',
-    GRAYSCALE: 'GrayScale'
+    SATURATION: 'saturation',
+    INVERSION: 'inversion',
+    GRAYSCALE: 'grayscale'
 }
 
 const direccion = {
@@ -33,12 +33,19 @@ const direccion = {
     VERTICAL: 'vertical'
 }
 
+const filtrosOpcion = {
+    BRIGHTNESS: { max: 200, value: brightness },
+    SATURATION: { max: 200, value: saturation },
+    INVERSION: { max: 100, value: inversion },
+    GRAYSCALE: { max: 100, value: grayscale }
+};
+
 
 const appyFilter = () => {
 
     const editFilter = {
         ROTATE: `rotate(${rotate}deg) scale(${flipHorizontal}, ${flipVertical})`,
-        FILTER: `brightness(${Brightness}%) saturate(${Saturation}%) invert(${Inversion}%) grayscale(${GrayScale})`
+        FILTER: `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale})`
     };
 
     previeImg.style.transform = editFilter.ROTATE;
@@ -61,24 +68,17 @@ const loadImagen = () => {
     option.addEventListener('click', () => {
 
         document.querySelector('.filter .active').classList.remove('active');
-
         option.classList.add('active');
         filterName.textContent = option.textContent;
 
-        const filterOptions = {
-            BRIGHTNESS: { max: 200, value: Brightness },
-            SATURATION: { max: 200, value: Saturation },
-            INVERSION: { max: 100, value: Inversion },
-            GRAYSCALE: { max: 100, value: GrayScale }
-        };
 
-        if (filterOptions[option.id]) {
-            const { max, value } = filterOptions[option.id];
+        if (filtrosOpcion[option.id]) {
+            const { max, value } = filtrosOpcion[option.id];
             filterSlider.max = max;
             filterSlider.value = value;
             filterValue.textContent = `${value} %`;
         } else {
-            console.error("Opcionn de filtro no reconocida:", option.id);
+            console.log("Opcion de filtro no reconocida:", option.id);
         }
         appyFilter();
     });
@@ -86,35 +86,24 @@ const loadImagen = () => {
 
 const updateFilter = () => {
     filterValue.textContent = `${filterSlider.value} %`;
-    const filterSettings = {
-        BRIGHTNESS: 'Brightness',
-        SATURATION: 'Saturation',
-        INVERSION: 'Inversion',
-        GRAYSCALE: 'GrayScale'
-    };
 
     const selectedFilter = document.querySelector('.filter .active').id;
-    const filterPropertY = filtros[selectedFilter];
+    const { BRIGHTNESS, INVERSION, SATURATION } = filtros;
 
-    // if (selectedFilter == filtros.BRIGHTNESS) {
+    if (selectedFilter == BRIGHTNESS) {
 
-    //     Brightness = filterSlider.value;
-    // } else if (selectedFilter == filtros.SATURATION) {
+        brightness = filterSlider.value;
+    } else if (selectedFilter == SATURATION) {
 
-    //     Saturation = filterSlider.value;
-    // } else if (selectedFilter == filtros.INVERSION) {
+        saturation = filterSlider.value;
+    } else if (selectedFilter == INVERSION) {
 
-    //     Inversion = filterSlider.value;
-    // } else {
-
-    //     GrayScale = filterSlider.value
-    // };
-    console.log(filterPropertY);
-    if (filterPropertY) {
-        window[filterPropertY] = filterSlider.value;
+        inversion = filterSlider.value;
     } else {
-        console.error("Filtro seleccionado no reconocido:", selectedFilter);
-    }
+
+        grayscale = filterSlider.value
+    };
+
     appyFilter();
 };
 
@@ -136,10 +125,10 @@ const updateFilter = () => {
 
 const restFilter = () => {
 
-    Brightness = 100;
-    Saturation = 100;
-    Inversion = 0;
-    GrayScale = 0;
+    brightness = 100;
+    saturation = 100;
+    inversion = 0;
+    grayscale = 0;
 
     rotate = 0;
     flipHorizontal = 1;
@@ -152,7 +141,7 @@ const restFilter = () => {
 const saveImage = () => {
 
     const editFilter = {
-        FILTER: `brightness(${Brightness}%) saturate(${Saturation}%) invert(${Inversion}%) grayscale(${GrayScale})`
+        FILTER: `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale})`
     };
 
     const canvas = document.createElement('canvas');
