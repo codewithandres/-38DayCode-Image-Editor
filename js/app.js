@@ -65,30 +65,46 @@ const loadImagen = () => {
         option.classList.add('active');
         filterName.textContent = option.textContent;
 
-        if (option.id === filtros.BRIGHTNESS) {
+        // if (option.id === filtros.BRIGHTNESS) {
 
-            filterSlider.max = 200;
-            filterSlider.value = Brightness;
-            filterValue.textContent = `${Brightness} %`;
+        //     filterSlider.max = 200;
+        //     filterSlider.value = Brightness;
+        //     filterValue.textContent = `${Brightness} %`;
 
-        } else if (option.id === filtros.SATURATION) {
+        // } else if (option.id === filtros.SATURATION) {
 
-            filterSlider.max = 200;
-            filterSlider.value = Saturation;
-            filterValue.textContent = `${Saturation} %`;
+        //     filterSlider.max = 200;
+        //     filterSlider.value = Saturation;
+        //     filterValue.textContent = `${Saturation} %`;
 
-        } else if (option.id === filtros.INVERSION) {
+        // } else if (option.id === filtros.INVERSION) {
 
-            filterSlider.max = 100;
-            filterSlider.value = Inversion;
-            filterValue.textContent = `${Inversion} %`;
+        //     filterSlider.max = 100;
+        //     filterSlider.value = Inversion;
+        //     filterValue.textContent = `${Inversion} %`;
 
+        // } else {
+
+        //     filterSlider.max = 100;
+        //     filterSlider.value = GrayScale;
+        //     filterValue.textContent = `${GrayScale} %`;
+
+        // }
+
+        const filterOptions = {
+            BRIGHTNESS: { max: 200, value: Brightness },
+            SATURATION: { max: 200, value: Saturation },
+            INVERSION: { max: 100, value: Inversion },
+            GRAYSCALE: { max: 100, value: GrayScale }
+        };
+
+        if (filterOptions[option.id]) {
+            const { max, value } = filterOptions[option.id];
+            filterSlider.max = max;
+            filterSlider.value = value;
+            filterValue.textContent = `${value} %`;
         } else {
-
-            filterSlider.max = 100;
-            filterSlider.value = GrayScale;
-            filterValue.textContent = `${GrayScale} %`;
-
+            console.error("Opcionn de filtro no reconocida:", option.id);
         }
         appyFilter();
     });
