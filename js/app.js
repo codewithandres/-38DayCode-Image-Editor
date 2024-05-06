@@ -90,7 +90,7 @@ const loadImagen = () => {
             filterValue.textContent = `${GrayScale} %`;
 
         }
-        // appyFilter();
+        appyFilter();
     });
 });
 
