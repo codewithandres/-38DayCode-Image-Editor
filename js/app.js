@@ -103,8 +103,11 @@ const updateFilter = () => {
 
     //     GrayScale = filterSlider.value
     // };
+    console.log(filterPropertY);
     if (filterPropertY) {
         window[filterPropertY] = filterSlider.value;
+    } else {
+        console.error("Filtro seleccionado no reconocido:", selectedFilter);
     }
     appyFilter();
 };
